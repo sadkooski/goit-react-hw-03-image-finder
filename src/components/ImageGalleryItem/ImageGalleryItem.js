@@ -1,7 +1,18 @@
-export const ImageGalleryItem = ({ src, alt, key }) => {
+import React from 'react';
+
+export const ImageGalleryItem = ({ src, alt, onClick }) => {
+  const handleImageClick = () => {
+    onClick(src);
+  };
+
   return (
-    <li class="gallery-item">
-      <img src={src} alt={alt} />
+    <li className="ImageGalleryItem">
+      <img
+        className="ImageGalleryItem-image"
+        src={src}
+        alt={alt}
+        onClick={handleImageClick}
+      />
     </li>
   );
 };
